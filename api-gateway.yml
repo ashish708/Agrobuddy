@@ -62,12 +62,12 @@ spring:
            - RewritePath=/product-service(?<segment>/?.*), $\{segment}
            
 
-        - id: cart-service
-          uri: lb://CART-SERVICE
-          predicates:
-            - Path=/cart/** 
-          filters:
-           - RewritePath=/cart-service(?<segment>/?.*), $\{segment}  
+#         - id: cart-service
+#           uri: lb://CART-SERVICE
+#           predicates:
+#             - Path=/cart/** 
+#           filters:
+#            - RewritePath=/cart-service(?<segment>/?.*), $\{segment}  
           
         - id: cart-service
           uri: lb://CART-SERVICE
