@@ -64,8 +64,8 @@ spring:
         - id: cart-service
           uri: lb://CART-SERVICE
           predicates:
-            - Path=/cart/** 
-            - Path=/order/** 
+            - Path=/cart/** or /order/** 
+            
           filters:
            - RewritePath=/cart-service(?<segment>/?.*), $\{segment}  
           
