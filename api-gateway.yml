@@ -13,7 +13,8 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true          lowerCaseServiceId: true
+          enabled: true
+          lowerCaseServiceId: true
         corsConfigurations:
           '[/**]':
             allowedOrigins: '*'
@@ -64,16 +65,10 @@ spring:
         - id: cart-service
           uri: lb://CART-SERVICE
           predicates:
-            - Path=/cart/**
+            - Path=/cart/** 
           filters:
-           - RewritePath=/cart-service(?<segment>/?.*), $\{segment}  
-          
-#         - id: cart-service
-#           uri: lb://CART-SERVICE
-#           predicates:
-#             - Path=/order/** 
-#           filters:
-#            - RewritePath=/cart-service(?<segment>/?.*), $\{segment} 
+           - RewritePath=/cart-service(?<segment>/?.*), $\{segment}
+
 
 
 #        - id: product-webapp
